@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  display: flex;
+
+  .description {
+    width: 55%;
+
+    .text {
+      width: 75%;
+      margin-left: 5%;
+      .title {
+        font-family: port-lligat-slab, monospace;
+        font-size: 5em;
+        color: rgba(168, 0, 0, 1);
+      }
+      .description-text {
+        font-size: 1.2em;
+        font-family: Roboto, sans-serif;
+      }
+    }
+
+    .select {
+      display: flex;
+      margin-left: 6%;
+      font-family: Roboto, serif;
+      font-size: 1.2em;
+      vertical-align: middle;
+      margin-top: 6%;
+
+      .checkbox {
+        margin-right: 5%;
+        width: 20%;
+
+        input {
+          margin-right: 5%;
+        }
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: port-lligat-slab;
+  src: url("../fonts/port.ttf");
+}
