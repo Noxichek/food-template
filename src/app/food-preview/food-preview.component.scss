@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   display: flex;
-  margin-top: 2%;
+  margin-top: 1vh;
 
   .food-img {
     display: flex;
@@ -19,14 +19,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 6vh;
 
     .btn {
       width: 12em;
       height: 4em;
-      margin-left: 5%;
       font-family: port-lligat-slab, serif;
       font-size: 1.1em;
+      color: white;
+      cursor: pointer;
     }
 
     .red-btn {
@@ -50,7 +51,7 @@
       position: relative;
       border: 0;
       border-radius: 10px;
-      background: rgb(216,216,216);
+      background: #545454;
     }
 
     .gray-btn:before {
@@ -58,7 +59,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      border-bottom: 4em solid rgb(216,216,216);
+      border-bottom: 4em solid #545454;
       border-left: 40px solid white;
     }
   }
@@ -70,11 +71,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 8%;
+    margin-top: 10vh;
 
     .text {
       width: 75%;
-      margin-left: 5%;
+      margin-left: 6vw;
       .title {
         font-family: port-lligat-slab, serif;
         font-size: 5em;
@@ -83,15 +84,15 @@
       .description-text {
         font-size: 1.2em;
         font-family: Roboto, sans-serif;
-        margin-top: 3%;
+        margin-top: 2vh;
       }
     }
 
     .select {
       display: flex;
-      margin-left: 6%;
+      margin-left: 3vw;
       vertical-align: middle;
-      margin-top: 6%;
+      margin-top: 5vh;
       width: 70%;
 
       .checkbox {
@@ -130,7 +131,26 @@
   height: 2px;
 }
 
-@font-face {
-  font-family: port-lligat-slab;
-  src: url("../fonts/port.ttf");
+@media (max-width: 480px) {
+  .container {
+    display: flex;
+    width: 460px;
+    align-items: center;
+
+    .buttons {
+      width: 90%;
+    }
+
+    .red-btn {
+      margin-right: 5px;
+    }
+
+    .red-btn:before {
+      display: none;
+    }
+
+    .gray-btn:before {
+      display: none;
+    }
+  }
 }

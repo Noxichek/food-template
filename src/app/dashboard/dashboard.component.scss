@@ -7,10 +7,13 @@
   width: 100%;
   margin-top: 50px;
 
+  .empty-container {
+    width: 10%;
+  }
+
   .menu {
     display: flex;
     justify-content: space-between;
-    margin-left: 20%;
 
     a {
       margin-left: 50px;
@@ -32,4 +35,9 @@
       cursor: pointer;
     }
   }
+}
+
+.active {
+  font-weight: bolder;
+  text-decoration: underline;
 }
