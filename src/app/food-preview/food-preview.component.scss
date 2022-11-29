@@ -1,42 +1,128 @@
 .container {
   width: 100%;
   display: flex;
+  margin-top: 2%;
+
+  .food-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+    .btn {
+      width: 12em;
+      height: 4em;
+      margin-left: 5%;
+      font-family: port-lligat-slab, serif;
+      font-size: 1.1em;
+    }
+
+    .red-btn {
+      position: relative;
+      border: 0;
+      border-radius: 10px;
+      background: #A80000;
+    }
+
+    .red-btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top: 4em solid #A80000;
+      border-right: 40px solid white;
+      width: 0;
+    }
+
+    .gray-btn {
+      position: relative;
+      border: 0;
+      border-radius: 10px;
+      background: rgb(216,216,216);
+    }
+
+    .gray-btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 4em solid rgb(216,216,216);
+      border-left: 40px solid white;
+    }
+  }
 
   .description {
     width: 55%;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
 
     .text {
       width: 75%;
       margin-left: 5%;
       .title {
-        font-family: port-lligat-slab, monospace;
+        font-family: port-lligat-slab, serif;
         font-size: 5em;
         color: rgba(168, 0, 0, 1);
       }
       .description-text {
         font-size: 1.2em;
         font-family: Roboto, sans-serif;
+        margin-top: 3%;
       }
     }
 
     .select {
       display: flex;
       margin-left: 6%;
-      font-family: Roboto, serif;
-      font-size: 1.2em;
       vertical-align: middle;
       margin-top: 6%;
+      width: 70%;
 
       .checkbox {
-        margin-right: 5%;
-        width: 20%;
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        font-family: Roboto, serif;
+        font-size: 1.5em;
 
-        input {
-          margin-right: 5%;
+        label {
+          margin-left: 10px;
+        }
+
+        .medium-value {
+          display: flex;
+          flex-direction: row;
+          margin-right: 50px;
+
+          .input-radio-btn {
+            border: 0;
+            height: 2em;
+            width: 30px;
+          }
         }
       }
     }
   }
+}
+
+.line {
+  margin-top: 6%;
+  width: 70%;
+  border: none;
+  background-color: rgb(216,216,216);
+  color: rgb(216,216,216);
+  height: 2px;
 }
 
 @font-face {

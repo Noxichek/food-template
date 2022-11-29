@@ -3,25 +3,38 @@
     <section class="text">
       <p class="title">steak with tomato</p>
       <p class="description-text">
-        Salisbury Steak is made with ground beef that has been shaped into patties, while Swiss Steak is made with actual steak. For Swiss Steak, the beef is rolled or pounded and then braised in a
+        Salisbury Steak is made with ground beef that has been shaped into patties, while Swiss Steak is made with
+        actual steak. For Swiss Steak, the beef is rolled or pounded and then braised in a
       </p>
     </section>
     <section class="select">
-      <section class="checkbox-medium checkbox">
-        <input id="medium" type="checkbox">
-        <label for="medium">medium</label>
+      <section class="checkbox">
+        <section class="medium-value">
+          <input class="input-radio-btn" id="medium" type="radio" name="type" value="medium">
+          <label for="medium">medium</label>
+        </section>
+        <section class="medium-value">
+          <input class="input-radio-btn" id="large" type="radio" name="type" value="large">
+          <label for="large">large</label>
+        </section>
       </section>
-      <section class="checkbox-large checkbox">
-        <input id="large" type="checkbox">
-        <label for="large">large</label>
-      </section>
+      <p></p>
+    </section>
+    <section class="line">
+      <hr>
     </section>
     <section class="buttons">
-
+      <button class="btn red-btn">
+        Add To Cart
+      </button>
+      <button class="btn gray-btn">
+        Book a Table
+      </button>
     </section>
   </section>
 
   <section class="food-img">
     <img alt="food" src="assets/images/pic1.png">
+    <app-coupen></app-coupen>
   </section>
 </section>
