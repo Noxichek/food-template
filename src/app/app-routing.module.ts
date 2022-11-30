@@ -4,6 +4,7 @@ import { FoodPreviewComponent } from './food-preview/food-preview.component';
 
 const routes: Routes = [
   { path: 'products', component: FoodPreviewComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'products' }
 ];
 
 @NgModule({

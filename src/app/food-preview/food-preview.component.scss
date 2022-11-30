@@ -3,18 +3,18 @@
   display: flex;
   margin-top: 1vh;
 
-  .food-img {
+  .food__img__container {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    img {
+    .food__img--img {
       width: 600px;
       height: 600px;
     }
   }
 
-  .buttons {
+  .buttons__container {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -30,14 +30,14 @@
       cursor: pointer;
     }
 
-    .red-btn {
+    .red__btn {
       position: relative;
       border: 0;
       border-radius: 10px;
       background: #A80000;
     }
 
-    .red-btn:before {
+    .red__btn:before {
       content: '';
       position: absolute;
       top: 0;
@@ -47,14 +47,14 @@
       width: 0;
     }
 
-    .gray-btn {
+    .gray__btn {
       position: relative;
       border: 0;
       border-radius: 10px;
       background: #545454;
     }
 
-    .gray-btn:before {
+    .gray__btn:before {
       content: '';
       position: absolute;
       top: 0;
@@ -64,7 +64,7 @@
     }
   }
 
-  .description {
+  .description__content {
     width: 55%;
     height: 410px;
     display: flex;
@@ -73,40 +73,40 @@
     justify-content: center;
     margin-top: 10vh;
 
-    .text {
+    .description__content--container {
       width: 75%;
       margin-left: 6vw;
-      .title {
+      .description__title {
         font-family: port-lligat-slab, serif;
         font-size: 5em;
         color: rgba(168, 0, 0, 1);
       }
-      .description-text {
+      .description__text {
         font-size: 1.2em;
         font-family: Roboto, sans-serif;
         margin-top: 2vh;
       }
     }
 
-    .select {
+    .select__container {
       display: flex;
       margin-left: 3vw;
       vertical-align: middle;
       margin-top: 5vh;
       width: 70%;
 
-      .checkbox {
+      .select__container--checkbox {
         display: flex;
         justify-content: flex-start;
         width: 70%;
         font-family: Roboto, serif;
         font-size: 1.5em;
 
-        label {
+        .status__value--label {
           margin-left: 10px;
         }
 
-        .medium-value {
+        .status__value {
           display: flex;
           flex-direction: row;
           margin-right: 50px;
@@ -137,20 +137,31 @@
     width: 460px;
     align-items: center;
 
-    .buttons {
+    .buttons__container {
       width: 90%;
     }
 
-    .red-btn {
+    .red__btn {
       margin-right: 5px;
     }
 
-    .red-btn:before {
+    .red__btn:before {
       display: none;
     }
 
-    .gray-btn:before {
+    .gray__btn:before {
       display: none;
     }
+
+    .description__content {
+      .select__container {
+        .status {
+          .status__value {
+            margin: 0;
+          }
+        }
+      }
+    }
+
   }
 }

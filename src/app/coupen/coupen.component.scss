@@ -10,16 +10,16 @@
   margin-bottom: 4vh;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 
-  .title-container {
+  .header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(216,216,216);
 
-    .title {
+    .header__title {
       margin: 10px;
     }
 
-    .buttons {
+    .header__buttons {
       margin: 10px;
 
       .btn {
@@ -34,7 +34,7 @@
     }
   }
 
-  .main {
+  .food {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,20 +53,20 @@
       }
     }
 
-    .cost {
-      .through{
+    .pay__cost {
+      .pay__cost--prev{
         text-decoration: line-through;
       }
     }
 
-    .food {
+    .food__info {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .description {
+      .food__info--description {
         margin-left: 10px;
-        .fish {
+        .description__title {
           font-size: 1.2em;
           font-weight: bold;
         }
