@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-coupen',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coupen.component.scss']
 })
 export class CoupenComponent implements OnInit {
+
+  @Input()
+  public couponImgSrc: string = '';
 
   constructor() { }
 

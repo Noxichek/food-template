@@ -8,10 +8,56 @@
     flex-direction: column;
     align-items: center;
 
+    .food__img__container--block {
+      display: flex;
+
+      .block-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .block-buttons--btn {
+          margin-bottom: 1em;
+          height: 2em;
+          width: 30px;
+          cursor: pointer;
+        }
+
+        .block-buttons--btn:after {
+          width: 2em;
+          height: 2em;
+          border-radius: 2em;
+          left: 2px;
+          position: relative;
+          background-color: #2C2C2C;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+        }
+
+        .block-buttons--btn:checked:after {
+          width: 2em;
+          height: 2em;
+          border-radius: 2em;
+          left: 2px;
+          position: relative;
+          background-color: var(--btnColor);
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          transition: background-color 0.4s;
+        }
+
+      }
+    }
+
     .food__img--img {
       width: 600px;
       height: 600px;
+      background-size: 600px 600px;
+      transition: background .3s ease-in-out;
     }
+
   }
 
   .buttons__container {
@@ -34,7 +80,8 @@
       position: relative;
       border: 0;
       border-radius: 10px;
-      background: #A80000;
+      background: var(--btnColor);
+      transition: background .4s;
     }
 
     .red__btn:before {
@@ -42,9 +89,10 @@
       position: absolute;
       top: 0;
       right: 0;
-      border-top: 4em solid #A80000;
+      border-top: 4em solid var(--btnColor);
       border-right: 40px solid white;
       width: 0;
+      transition: border-top-color .4s;
     }
 
     .gray__btn {
@@ -79,7 +127,8 @@
       .description__title {
         font-family: port-lligat-slab, serif;
         font-size: 5em;
-        color: rgba(168, 0, 0, 1);
+        color: var(--btnColor);
+        transition: color .4s;
       }
       .description__text {
         font-size: 1.2em;

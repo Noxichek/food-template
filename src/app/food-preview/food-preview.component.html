@@ -1,7 +1,7 @@
-<section class="container">
+<section class="container" [style.--btnColor]="currentOption.color">
   <section class="description__content">
     <section class="description__content--container">
-      <p class="description__title">steak with tomato</p>
+      <p class="description__title">{{ currentOption.title }}</p>
       <p class="description__text">
         Salisbury Steak is made with ground beef that has been shaped into patties, while Swiss Steak is made with
         actual steak. For Swiss Steak, the beef is rolled or pounded and then braised in a
@@ -34,7 +34,19 @@
   </section>
 
   <section class="food__img__container">
-    <img class="food__img--img" alt="food" src="assets/images/pic1.png">
-    <app-coupen></app-coupen>
+    <section class="food__img__container--block">
+      <section #foodImg *ngIf="toggleImg" class="food__img--img"></section>
+      <section class="block-buttons">
+        <input
+          *ngFor="let salad of foodsList"
+          (click)="changeFood(salad.id)"
+          [checked]="salad.checked"
+          class="block-buttons--btn"
+          type="radio"
+          name="food"
+          >
+      </section>
+    </section>
+    <app-coupen [couponImgSrc]="currentOption.couponImgSrc"></app-coupen>
   </section>
 </section>
