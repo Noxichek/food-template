@@ -4,6 +4,7 @@ import { FoodPreviewComponent } from './food-preview/components/food-preview/foo
 
 const routes: Routes = [
   { path: 'products', component: FoodPreviewComponent },
+  { path: 'auth', loadChildren: () => import('./authorization/authorization.module').then((x) => x.AuthorizationModule) },
   { path: '', pathMatch: 'full', redirectTo: 'products' }
 ];
 

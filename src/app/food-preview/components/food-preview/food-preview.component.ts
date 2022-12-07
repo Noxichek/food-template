@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { interval } from 'rxjs';
+import { interval, Subject, takeUntil } from 'rxjs';
 
 import { IFood } from '../../interfaces/food.interface';
 import { foods } from '../../consts/food';
@@ -10,7 +10,7 @@ import { foods } from '../../consts/food';
   templateUrl: './food-preview.component.html',
   styleUrls: ['./food-preview.component.scss'],
 })
-export class FoodPreviewComponent implements AfterViewInit, OnInit {
+export class FoodPreviewComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('foodImg')
   private _foodImg!: ElementRef;
@@ -18,15 +18,20 @@ export class FoodPreviewComponent implements AfterViewInit, OnInit {
   public currentOption: IFood = foods[0];
   public foodsList: IFood[] = foods;
   public toggleImg = true;
+
   private _changeFoodItem$ = interval(5000);
+  private _destroy$ = new Subject<void>();
   private _counter = 1;
 
   public ngOnInit(): void {
-    this._changeFoodItem$.subscribe(() => {
+    this._changeFoodItem$
+      .pipe(
+        takeUntil(this._destroy$),
+      )
+      .subscribe(() => {
       if (this._counter === this.foodsList.length) {
         this._counter = 0;
       }
-
       this.changeFood(this._counter);
       this._counter++;
     })
@@ -34,6 +39,11 @@ export class FoodPreviewComponent implements AfterViewInit, OnInit {
 
   public ngAfterViewInit(): void {
     this._foodImg.nativeElement.style.backgroundImage = `url(${this.currentOption.imgSrc})`;
+  }
+
+  public ngOnDestroy(): void {
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 
   public changeFood(id: number) : void {
