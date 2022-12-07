@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  @ViewChild('searchInput')
+  private _searchInput!: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public openSearchInput(): void {
+    this._searchInput.nativeElement.focus();
+  }
 }

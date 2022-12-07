@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 
 import { interval } from 'rxjs';
 
-import { IFood } from './interfaces/food.interface';
-import { foods } from './consts/food';
+import { IFood } from '../../interfaces/food.interface';
+import { foods } from '../../consts/food';
 
 @Component({
   selector: 'app-food-preview',
