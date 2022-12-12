@@ -1,0 +1,216 @@
+.container {
+  width: 100%;
+  display: flex;
+  margin-top: 1vh;
+
+  .food__img__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .food__img__container--block {
+      display: flex;
+
+      .block-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .block-buttons--btn {
+          margin-bottom: 1em;
+          height: 2em;
+          width: 30px;
+          cursor: pointer;
+        }
+
+        .block-buttons--btn:after {
+          width: 2em;
+          height: 2em;
+          border-radius: 2em;
+          left: 2px;
+          position: relative;
+          background-color: #2C2C2C;
+          content: '';
+          display: inline-block;
+          visibility: visible;
+        }
+
+        .block-buttons--btn:checked:after {
+          width: 2em;
+          height: 2em;
+          border-radius: 2em;
+          left: 2px;
+          position: relative;
+          background-color: var(--btnColor);
+          content: '';
+          display: inline-block;
+          visibility: visible;
+          transition: background-color 0.4s;
+        }
+
+      }
+    }
+
+    .food__img--img {
+      width: 600px;
+      height: 600px;
+      background-size: 600px 600px;
+      transition: background .3s ease-in-out;
+    }
+
+  }
+
+  .buttons__container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+
+    .btn {
+      width: 12em;
+      height: 4em;
+      font-family: port-lligat-slab, serif;
+      font-size: 1.1em;
+      color: white;
+      cursor: pointer;
+    }
+
+    .red__btn {
+      position: relative;
+      border: 0;
+      border-radius: 10px;
+      background: var(--btnColor);
+      transition: background .4s;
+    }
+
+    .red__btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top: 4em solid var(--btnColor);
+      border-right: 40px solid white;
+      width: 0;
+      transition: border-top-color .4s;
+    }
+
+    .gray__btn {
+      position: relative;
+      border: 0;
+      border-radius: 10px;
+      background: #545454;
+    }
+
+    .gray__btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom: 4em solid #545454;
+      border-left: 40px solid white;
+    }
+  }
+
+  .description__content {
+    width: 55%;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+
+    .description__content--container {
+      width: 75%;
+      margin-left: 6vw;
+      .description__title {
+        font-family: port-lligat-slab, serif;
+        font-size: 5em;
+        color: var(--btnColor);
+        transition: color .4s;
+      }
+      .description__text {
+        font-size: 1.2em;
+        font-family: Roboto, sans-serif;
+        margin-top: 2vh;
+      }
+    }
+
+    .select__container {
+      display: flex;
+      margin-left: 3vw;
+      vertical-align: middle;
+      margin-top: 5vh;
+      width: 70%;
+
+      .select__container--checkbox {
+        display: flex;
+        justify-content: flex-start;
+        width: 70%;
+        font-family: Roboto, serif;
+        font-size: 1.5em;
+
+        .status__value--label {
+          margin-left: 10px;
+        }
+
+        .status__value {
+          display: flex;
+          flex-direction: row;
+          margin-right: 50px;
+
+          .input-radio-btn {
+            border: 0;
+            height: 2em;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.line {
+  margin-top: 6%;
+  width: 70%;
+  border: none;
+  background-color: rgb(216,216,216);
+  color: rgb(216,216,216);
+  height: 2px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    display: flex;
+    width: 460px;
+    align-items: center;
+
+    .buttons__container {
+      width: 90%;
+    }
+
+    .red__btn {
+      margin-right: 5px;
+    }
+
+    .red__btn:before {
+      display: none;
+    }
+
+    .gray__btn:before {
+      display: none;
+    }
+
+    .description__content {
+      .select__container {
+        .status {
+          .status__value {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+  }
+}

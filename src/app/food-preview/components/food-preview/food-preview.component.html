@@ -1,0 +1,52 @@
+<section class="container" [style.--btnColor]="currentOption.color">
+  <section class="description__content">
+    <section class="description__content--container">
+      <p class="description__title">{{ currentOption.title }}</p>
+      <p class="description__text">
+        Salisbury Steak is made with ground beef that has been shaped into patties, while Swiss Steak is made with
+        actual steak. For Swiss Steak, the beef is rolled or pounded and then braised in a
+      </p>
+    </section>
+    <section class="select__container">
+      <section class="select__container--checkbox status">
+        <section class="status__value">
+          <input class="input-radio-btn" id="medium" type="radio" name="type" value="medium">
+          <label class="status__value--label" for="medium">medium</label>
+        </section>
+        <section class="status__value">
+          <input class="input-radio-btn" id="large" type="radio" name="type" value="large">
+          <label class="status__value--label" for="large">large</label>
+        </section>
+      </section>
+      <p></p>
+    </section>
+    <section class="line">
+      <hr>
+    </section>
+    <section class="buttons__container btn">
+      <button class="btn red__btn">
+        Add To Cart
+      </button>
+      <button class="btn gray__btn">
+        Book a Table
+      </button>
+    </section>
+  </section>
+
+  <section class="food__img__container">
+    <section class="food__img__container--block">
+      <section #foodImg *ngIf="toggleImg" class="food__img--img"></section>
+      <section class="block-buttons">
+        <input
+          *ngFor="let salad of foodsList"
+          (click)="changeFood(salad.id)"
+          [checked]="salad.checked"
+          class="block-buttons--btn"
+          type="radio"
+          name="food"
+          >
+      </section>
+    </section>
+    <app-coupen [couponImgSrc]="currentOption.couponImgSrc"></app-coupen>
+  </section>
+</section>
